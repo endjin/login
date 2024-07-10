@@ -39,6 +39,6 @@ branding:
   color: 'blue'
 runs:
   using: 'node20'
-  pre: 'lib/cleanup/index.js'
+  pre: (! startsWith(runner.name, 'GitHub Actions'))
   main: 'lib/main/index.js'
-  post: 'lib/cleanup/index.js'
+  post: (! startsWith(runner.name, 'GitHub Actions'))
